@@ -1,0 +1,79 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cards{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background-color: darkseagreen;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.cards .card{
+    width: 200px;
+    height: 250px;
+    background: #07182e;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards .card::before{
+    content: "";
+    position: absolute;
+    width: 500px;
+    background-image: linear-gradient(90deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 100px;
+    animation: animate 5s linear infinite;
+    transition: all .2s linear;
+}
+
+@keyframes animate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+.cards .card::after{
+    content: "";
+    position: absolute;
+    background: #0a1f3b;
+    inset: 6px;
+    border-radius: 8px;
+}
+
+.cards .card .content{
+    padding: 5px;
+    z-index: 999;
+}
+
+.cards .card .content h1{
+    color: rgb(0, 183, 255);
+    margin-bottom: 8px;
+}
+
+.cards .card .content h3{
+    color: #b856ff;
+    border-bottom: 1px solid #b956ff93;
+    padding-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.cards .card .content p{
+    max-width: 150px;
+    color: #f0f0f3ba;
+    margin-top: 10px;
+    font-size: 0.8rem;
+
+}
